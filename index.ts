@@ -49,10 +49,15 @@ const reviews: {
 const ADMIN = "admin";
 const READ_ONLY = "read-only";
 
+enum Permissions {
+  ADMIN,
+  READ_ONLY,
+}
+
 const you = {
   firstName: "Bobby",
   lastName: "Brown",
-  permissions: "admin",
+  permissions: ADMIN,
   isReturning: true,
   age: 35,
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
