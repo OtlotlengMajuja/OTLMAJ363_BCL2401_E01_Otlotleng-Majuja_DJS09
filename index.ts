@@ -109,4 +109,5 @@ populateUser(you.isReturning, you.firstName);
 for (let i = 0; i < properties.length; i++) {
   const card = document.createElement("div");
   card.classList.add("card");
+  card.innerHTML = properties[i].title;
 }
