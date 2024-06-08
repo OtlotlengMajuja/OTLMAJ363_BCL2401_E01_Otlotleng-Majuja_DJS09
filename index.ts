@@ -1,5 +1,6 @@
 import { showReviewTotal, populateUser } from "./utils";
 import { Permissions } from "./enums";
+import { LoyaltyUser } from "./enums";
 const propertyContainer = document.querySelector(".properties");
 const footer = document.querySelector(".footer");
 
