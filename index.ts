@@ -1,7 +1,8 @@
+import { showReviewTotal, populateUser } from "./utils";
+import { Permissions } from "./enums";
 const propertyContainer = document.querySelector(".properties");
 const footer = document.querySelector(".footer");
 
-import { showReviewTotal, populateUser } from "./utils";
 let isOpen: boolean;
 
 // Reviews
@@ -31,41 +32,14 @@ const reviews: {
   },
 ];
 
-// User
-// const you: {
-//   firstName: string;
-//   lastName: string;
-//   isReturning: boolean;
-//   age: number;
-//   stayedAt: string[];
-// } = {
-//   firstName: "Bobby",
-//   lastName: "Brown",
-//   isReturning: true,
-//   age: 35,
-//   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
-// };
-
-const ADMIN = "admin";
-const READ_ONLY = "read-only";
-
-enum Permissions {
-  ADMIN,
-  READ_ONLY,
-}
-
 const you = {
   firstName: "Bobby",
   lastName: "Brown",
-  permissions: ADMIN,
+  permissions: Permissions.ADMIN,
   isReturning: true,
   age: 35,
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
-
-if (you.permissions === "admin") {
-  //show
-}
 
 // Array of  Properties
 const properties: {
