@@ -1,4 +1,5 @@
 const propertyContainer = document.querySelector(".properties");
+const footer = document.querySelector(".footer");
 
 import { showReviewTotal, populateUser } from "./utils";
 let isOpen: boolean;
@@ -115,3 +116,13 @@ for (let i = 0; i < properties.length; i++) {
   card.appendChild(image);
   propertyContainer.appendChild(card);
 }
+
+// Replace with my location, current time and current temperature
+let currentLocation: [string, string, number] = ["Rustenburg", "17:27", 17];
+footer.innerHTML =
+  currentLocation[0] +
+  " " +
+  currentLocation[1] +
+  " " +
+  currentLocation[2] +
+  "°C";
