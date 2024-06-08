@@ -41,7 +41,7 @@ showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
     isReturning: 'yes',
 } */
 
-function populateUser(isReturning: boolean, userName) {
+function populateUser(isReturning: boolean, userName: string) {
   if (isReturning) {
     returningUserDisplay.innerHTML = "back";
   }
