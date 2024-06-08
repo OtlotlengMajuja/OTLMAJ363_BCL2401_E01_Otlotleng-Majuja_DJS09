@@ -1,5 +1,6 @@
 import { showReviewTotal, populateUser } from "./utils";
 import { Permissions, LoyaltyUser } from "./enums";
+import { Price, Country } from "./types";
 const propertyContainer = document.querySelector(".properties");
 const footer = document.querySelector(".footer");
 
@@ -36,10 +37,6 @@ const you = {
   age: 35,
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
-
-// type Alias
-type Price = 45 | 30 | 25;
-type Country = "Colombia" | "Poland" | "United Kingdom";
 
 // Array of  Properties
 const properties: {
@@ -103,18 +100,6 @@ populateUser(you.isReturning, you.firstName);
 let authorityStatus: any;
 
 isLoggedIn = false;
-
-function showDetails(
-  authorityStatus: boolean | Permissions,
-  element: HTMLDivElement,
-  price: number
-) {
-  if (authorityStatus) {
-    const priceDisplay = document.createElement("div");
-    priceDisplay.innerHTML = price.toString() + "/night";
-    element.appendChild(priceDisplay);
-  }
-}
 
 // Add the properties
 for (let i = 0; i < properties.length; i++) {
