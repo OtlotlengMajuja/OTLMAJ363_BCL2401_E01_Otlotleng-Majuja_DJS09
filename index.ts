@@ -46,6 +46,9 @@ const reviews: {
 //   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 // };
 
+const ADMIN = "admin";
+const READ_ONLY = "read-only";
+
 const you = {
   firstName: "Bobby",
   lastName: "Brown",
@@ -54,6 +57,10 @@ const you = {
   age: 35,
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
+
+if (you.permissions === "admin") {
+  //show
+}
 
 // Array of  Properties
 const properties: {
