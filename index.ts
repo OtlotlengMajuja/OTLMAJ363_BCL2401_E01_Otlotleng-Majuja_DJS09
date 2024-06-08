@@ -1,5 +1,7 @@
+import { showReviewTotal, populateUser } from "./utils";
 let isOpen: boolean;
 
+// Reviews
 const reviews: {
   name: string;
   stars: number;
@@ -26,8 +28,7 @@ const reviews: {
   },
 ];
 
-showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
-
+// User
 const you: {
   firstName: string;
   lastName: string;
@@ -41,5 +42,8 @@ const you: {
   age: 35,
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
+
+// Functions
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 
 populateUser(you.isReturning, you.firstName);
