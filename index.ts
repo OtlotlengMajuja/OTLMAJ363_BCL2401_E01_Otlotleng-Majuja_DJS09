@@ -2,6 +2,9 @@ import { showReviewTotal, populateUser } from "./utils";
 import { Permissions, LoyaltyUser } from "./enums";
 import { Price, Country } from "./types";
 const propertyContainer = document.querySelector(".properties");
+const reviewContainer = document.querySelector(".reviews");
+const container = document.querySelector(".container");
+const button = document.querySelector("button");
 const footer = document.querySelector(".footer");
 
 let isLoggedIn: boolean;
