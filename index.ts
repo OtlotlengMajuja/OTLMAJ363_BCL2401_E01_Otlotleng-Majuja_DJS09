@@ -26,6 +26,7 @@ const reviews = [
 ];
 
 function showReviewTotal(value: number, reviewer: string) {
+  const iconDisplay = isLoyalty ? "⭐" : "";
   reviewTotalDisplay.innerHTML =
     "review total" + value.toString() + "| last reviewed by " + reviewer;
 }
