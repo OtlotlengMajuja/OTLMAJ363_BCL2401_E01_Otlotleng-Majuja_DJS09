@@ -98,8 +98,10 @@ populateUser(you.isReturning, you.firstName);
 
 let authorityStatus: any;
 
+isLoggedIn = false;
+
 function showDetails(
-  authorityStatus: any,
+  authorityStatus: boolean | Permissions,
   element: HTMLDivElement,
   price: number
 ) {
@@ -119,7 +121,7 @@ for (let i = 0; i < properties.length; i++) {
   image.setAttribute("src", properties[i].image);
   card.appendChild(image);
   propertyContainer.appendChild(card);
-  showDetails(authorityStatus, card, properties[i].price);
+  showDetails({}, card, properties[i].price);
 }
 
 // Replaced with my location, current time and current temperature
