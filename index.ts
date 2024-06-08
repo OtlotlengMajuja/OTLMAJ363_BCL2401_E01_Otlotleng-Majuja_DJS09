@@ -31,4 +31,4 @@ function showReviewTotal(value: number, reviewer: string) {
     "review total" + value.toString() + "| last reviewed by " + reviewer;
 }
 
-showReviewTotal(reviews.length, reviews[0].name);
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
