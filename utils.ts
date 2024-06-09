@@ -2,6 +2,7 @@ const reviewTotalDisplay = document.querySelector("#reviews");
 const returningUserDisplay = document.querySelector("#returning-user");
 const userNameDisplay = document.querySelector("#user");
 import { LoyaltyUser, Permissions } from "./enums";
+import { Review } from "./interfaces";
 
 export function showReviewTotal(
   value: number,
@@ -44,14 +45,7 @@ export function makeMultiple(value: number): string {
   } else return "";
 }
 
-export function getTopTwoReviews(
-  reviews: {
-    name: string;
-    stars: number;
-    loyalyuser: LoyaltyUser;
-    date: string;
-  }[]
-) {
+export function getTopTwoReviews(reviews: Review[]): Review[] {
   const sortedReviews = reviews.sort((a, b) => b.stars - a.stars);
   return sortedReviews.slice(0, 2);
 }
