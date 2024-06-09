@@ -1,6 +1,7 @@
 import { showReviewTotal, populateUser } from "./utils";
 import { Permissions, LoyaltyUser } from "./enums";
 import { Price, Country } from "./types";
+import { Review } from "./interfaces";
 const propertyContainer = document.querySelector(".properties");
 const reviewContainer = document.querySelector(".reviews");
 const container = document.querySelector(".container");
@@ -8,13 +9,6 @@ const button = document.querySelector("button");
 const footer = document.querySelector(".footer");
 
 let isLoggedIn: boolean;
-
-interface Review {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}
 
 // Reviews
 const reviews: Review[] = [
@@ -121,14 +115,7 @@ for (let i = 0; i < properties.length; i++) {
 
 // Adds reviews to the page
 let count = 0;
-function addReviews(
-  array: {
-    name: string;
-    stars: number;
-    loyaltyUser: LoyaltyUser;
-    date: string;
-  }[]
-): void {
+function addReviews(array: Review[]): void {
   if (!count) {
     count++;
     const topTwo = getTopTwoReviews(array);
