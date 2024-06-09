@@ -7,6 +7,7 @@ import {
 import { Permissions, LoyaltyUser } from "./enums";
 import { Price, Country } from "./types";
 import Review from "./interfaces";
+import { Property } from "./interfaces";
 const propertyContainer = document.querySelector(".properties");
 const reviewContainer = document.querySelector(".reviews");
 const container = document.querySelector(".container");
@@ -46,34 +47,8 @@ const you = {
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
 
-interface Property {
-  image: string;
-  title: string;
-  price: Price;
-  location: {
-    firstLine: string;
-    city: string;
-    code: number;
-    country: string;
-  };
-  contact: [number, string];
-  isAvailable: boolean;
-}
-
 // Array of  Properties
-const properties: {
-  image: string;
-  title: string;
-  price: Price;
-  location: {
-    firstLine: string;
-    city: string;
-    code: number;
-    country: Country;
-  };
-  contact: [number, string];
-  isAvailable: boolean;
-}[] = [
+const properties: Property[] = [
   {
     image: "images/colombia-property.jpg",
     title: "Colombian Shack",
@@ -107,12 +82,25 @@ const properties: {
     location: {
       firstLine: "flat 15",
       city: "London",
-      code: 35433,
+      code: 'SW4 5XW',
       country: "United Kingdom",
     },
     contact: [+1123495082908, "andyluger@aol.com"],
     isAvailable: true,
   },
+  {
+    image: "images/malaysian-hotel.jpeg",
+    title: 'Malia Hotel',
+    price: 35,
+    location: {
+        firstLine: 'Room 4',
+        city: 'Malia',
+        code: 45334,
+        country: 'Malaysia'
+    }
+    contact: [ +60349822083, 'lee34@gmail.com'],
+    isAvailable: false,
+}
 ];
 
 // Functions
@@ -171,7 +159,18 @@ class MainProperty {
   }
 }
 
-let yourMainProperty = new MainProperty();
+let yourMainProperty = new MainProperty(
+  "images/italian-property.jpg",
+  "Italian House",
+  [
+    {
+      name: "Olive",
+      stars: 5,
+      loyaltyUser: LoyaltyUser.GOLD_USER,
+      date: '12-04-2021',
+    },
+  ]
+);
 
 const mainImageContainer = document.querySelector(".main-image");
 const image = document.createElement("img");
