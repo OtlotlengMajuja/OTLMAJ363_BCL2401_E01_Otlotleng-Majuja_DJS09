@@ -20,7 +20,7 @@ export function showReviewTotal(
 }
 
 export function populateUser(isReturning: boolean, userName: string) {
-  if (isReturning) {
+  if (isReturning == true) {
     returningUserDisplay.innerHTML = "back";
   }
   userNameDisplay.innerHTML = userName;
@@ -42,4 +42,16 @@ export function makeMultiple(value: number): string {
   if (value > 1 || value == 0) {
     return "s";
   } else return "";
+}
+
+export function getTopTwoReviews(
+  reviews: {
+    name: string;
+    stars: number;
+    loyalyuser: LoyaltyUser;
+    date: string;
+  }[]
+) {
+  const sortedReviews = reviews.sort((a, b) => b.stars - a.stars);
+  return sortedReviews.slice(0, 2);
 }

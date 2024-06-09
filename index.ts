@@ -100,7 +100,7 @@ const properties: {
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 populateUser(you.isReturning, you.firstName);
 
-// Add the properties
+// Adds the properties
 for (let i = 0; i < properties.length; i++) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -108,12 +108,37 @@ for (let i = 0; i < properties.length; i++) {
   const image = document.createElement("img");
   image.setAttribute("src", properties[i].image);
   card.appendChild(image);
-  propertyContainer.appendChild(card);
   showDetails(you.permissions, card, properties[i].price);
+  propertyContainer.appendChild(card);
 }
 
+// Adds reviews to the page
+let count = 0;
+function addReviews(
+  array: {
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string;
+  }[]
+): void {
+  if (!count) {
+    count++;
+    const topTwo = getTopTwoReviews(array);
+    for (let i = 0; i < topTwo.length; i++) {
+      const card = document.createElement("div");
+      card.classList.add("review-card");
+      card.innerHTML = topTwo[i].stars + " stars from " + topTwo[i].name;
+      reviewContainer.appendChild(card);
+    }
+    container.removeChild(button);
+  }
+}
+
+button.addEventListener("click", () => addReviews(reviews));
+
 // Replaced with my location, current time and current temperature
-let currentLocation: [string, string, number] = ["Rustenburg", "17:27", 17];
+let currentLocation: [string, string, number] = ["Rustenburg", "13:27", 17];
 footer.innerHTML =
   currentLocation[0] +
   " " +
