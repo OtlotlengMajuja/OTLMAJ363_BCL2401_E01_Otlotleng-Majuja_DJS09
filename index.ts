@@ -46,6 +46,20 @@ const you = {
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
 
+interface Property {
+  image: string;
+  title: string;
+  price: Price;
+  location: {
+    firstLine: string;
+    city: string;
+    code: number;
+    country: string;
+  };
+  contact: [number, string];
+  isAvailable: boolean;
+}
+
 // Array of  Properties
 const properties: {
   image: string;
@@ -156,3 +170,10 @@ class MainProperty {
     this.reviews = reviews;
   }
 }
+
+let yourMainProperty = new MainProperty();
+
+const mainImageContainer = document.querySelector(".main-image");
+const image = document.createElement("img");
+image.setAttribute("src", yourMainProperty.src);
+mainImageContainer.appendChild(image);
