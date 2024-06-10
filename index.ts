@@ -81,7 +81,7 @@ const properties: Property[] = [
     location: {
       firstLine: "flat 15",
       city: "London",
-      code: 'SW4 5XW',
+      code: "SW4 5XW",
       country: "United Kingdom",
     },
     contact: [+1123495082908, "andyluger@aol.com"],
@@ -89,21 +89,22 @@ const properties: Property[] = [
   },
   {
     image: "images/malaysian-hotel.jpeg",
-    title: 'Malia Hotel',
+    title: "Malia Hotel",
     price: 35,
     location: {
-        firstLine: 'Room 4',
-        city: 'Malia',
-        code: 45334,
-        country: 'Malaysia'
+      firstLine: "Room 4",
+      city: "Malia",
+      code: 45334,
+      country: "Malaysia",
     },
-    contact: [ +60349822083, 'lee34@gmail.com'],
+    contact: [+60349822083, "lee34@gmail.com"],
     isAvailable: false,
-}
+  },
 ];
 
 // Functions
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+
 populateUser(you.isReturning, you.firstName);
 
 // Adds the properties
@@ -146,7 +147,6 @@ footer.innerHTML =
   currentLocation[2] +
   "°C";
 
-
 let yourMainProperty = new MainProperty(
   "images/italian-property.jpg",
   "Italian House",
@@ -155,7 +155,7 @@ let yourMainProperty = new MainProperty(
       name: "Olive",
       stars: 5,
       loyaltyUser: LoyaltyUser.GOLD_USER,
-      date: '12-04-2021',
+      date: "12-04-2021",
     },
   ]
 );

@@ -12,7 +12,7 @@ export function showReviewTotal(
   const iconDisplay = LoyaltyUser.GOLD_USER ? "⭐" : "";
   reviewTotalDisplay.innerHTML =
     value.toString() +
-    " Review" +
+    " review" +
     makeMultiple(value) +
     "| last reviewed by " +
     reviewer +
