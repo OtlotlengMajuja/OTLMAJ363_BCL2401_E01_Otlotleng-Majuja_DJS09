@@ -137,7 +137,7 @@ function addReviews(array: Review[]): void {
 button.addEventListener("click", () => addReviews(reviews));
 
 // Replaced with my location, current time and current temperature
-let currentLocation: [string, string, number] = ["Rustenburg", "13:27", 17];
+let currentLocation: [string, string, number] = ["Rustenburg", "13.27", 17];
 footer.innerHTML =
   currentLocation[0] +
   " " +
