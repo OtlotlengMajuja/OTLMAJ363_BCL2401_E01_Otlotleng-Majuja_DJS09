@@ -5,9 +5,7 @@ import {
   getTopTwoReviews,
 } from "./utils";
 import { Permissions, LoyaltyUser } from "./enums";
-import { Price, Country } from "./types";
-import Review from "./interfaces";
-import { Property } from "./interfaces";
+import { Review, Property } from "./interfaces";
 const propertyContainer = document.querySelector(".properties");
 const reviewContainer = document.querySelector(".reviews");
 const container = document.querySelector(".container");
@@ -19,7 +17,7 @@ let isLoggedIn: boolean;
 // Reviews
 const reviews: Review[] = [
   {
-    name: "Sheia",
+    name: "Sheila",
     stars: 5,
     loyaltyUser: LoyaltyUser.GOLD_USER,
     date: "01-04-2021",
@@ -152,7 +150,7 @@ class MainProperty {
   src: string;
   title: string;
   reviews: Review[];
-  constructor(src, title, reviews) {
+  constructor(src: string, title: string, reviews: Review[]) {
     this.src = src;
     this.title = title;
     this.reviews = reviews;
