@@ -1,3 +1,5 @@
+import { Review } from "./interfaces";
+
 // Classes
 export class MainProperty {
     src: string;
